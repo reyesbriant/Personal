@@ -1,0 +1,30 @@
+manifestVersion: 1
+id: xteve # Un identificador único para tu app. ¡Cámbialo si quieres!
+name: xTeVe
+tagline: Your Personal IPTV & DVR Proxy
+icon: https://raw.githubusercontent.com/xteve-project/xTeVe-Documentation/master/images/xteve_logo_256.png # Un ícono para xTeVe
+category: Media
+version: "2.2.0" # O la versión que corresponda a la imagen Docker que uses
+port: 34400 # Puerto que Umbrel expondrá para acceder a la app
+description: >-
+  xTeVe is an M3U proxy for Plex, Emby and other PVR clients.
+  It allows you to manage your M3U playlists and EPG sources.
+  This app runs xTeVe in a Docker container.
+
+developer: xTeVe Project # O el mantenedor de la imagen Docker si es diferente
+website: https://xteve.de/ # O el sitio oficial de xTeVe o la imagen Docker
+submitter: TuNombreDeGitHub # Tu nombre de usuario de GitHub
+submission: https://github.com/TuNombreDeGitHub/tu-repositorio-umbrel-app # Enlace a tu repositorio de la app
+repo: https://github.com/dnsforge/docker-xteve # Repositorio de la imagen Docker o del proyecto xTeVe
+support: https://github.com/dnsforge/docker-xteve/issues # Dónde obtener soporte para la imagen/app
+gallery:
+  - https://raw.githubusercontent.com/xteve-project/xTeVe-Documentation/master/images/xteve_screenshot_1.png
+  - https://raw.githubusercontent.com/xteve-project/xTeVe-Documentation/master/images/xteve_screenshot_2.png
+  # Agrega más capturas de pantalla si quieres
+releaseNotes: >-
+  Initial release of xTeVe for Umbrel.
+  Based on the dnsforge/xteve Docker image.
+dependencies: []
+path: ""
+defaultUsername: "" # xTeVe no tiene un usuario/contraseña por defecto en su UI inicial
+defaultPassword: ""
