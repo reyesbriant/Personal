@@ -1,31 +1,25 @@
 version: "3.7"
 
 services:
+
   app_proxy:
     environment:
       APP_HOST: xteve_xteve_1
-      APP_PORT: 34400 # Puerto por defecto de la interfaz web de xTeVe
-    #networks: # Descomenta y ajusta si tu app_proxy necesita estar en redes específicas
-    #  - tu_red_de_umbrel # Reemplaza con el nombre de tu red de Umbrel si es necesario
+      APP_PORT: 34400 
 
   xteve:
-    image: dnsforge/xteve:latest # Imagen popular y actualizada de xTeVe
-    container_name: xteve # Nombre del contenedor
-    user: "1000:1000" # Usuario y grupo para permisos, común en Umbrel
+    image: dnsforge/xteve:latest 
+    container_name: xteve 
+    user: "1000:1000" 
     init: true
     ports:
-      - "34400:34400" # Puerto para la interfaz web
+      - "34400:34400"
     volumes:
-      # Directorio de datos de Umbrel para la configuración de xTeVe
       - ${APP_DATA_DIR}/config:/config
-      # Directorio de datos de Umbrel para el almacenamiento temporal/DVR de xTeVe
       - ${APP_DATA_DIR}/data:/tmp/xteve
-      # Acceso a la zona horaria del host
       - /etc/localtime:/etc/localtime:ro
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Santo_Domingo # Ajusta a tu zona horaria si es diferente
-    #networks: # Descomenta y ajusta si xTeVe necesita estar en redes específicas
-    #  - tu_red_de_umbrel # Reemplaza con el nombre de tu red de Umbrel si es necesario
+      - TZ=America/Santo_Domingo 
     restart: unless-stopped
